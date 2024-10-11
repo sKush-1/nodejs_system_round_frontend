@@ -1,16 +1,41 @@
 
 import { createBrowserRouter } from 'react-router-dom';
-import ChangePassword from './ChangePassword';
 import { RouterProvider } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Register from './pages/Register';
+import { Toaster } from 'react-hot-toast';
+import Login from './pages/Login';
+import ForgotPassword from './components/ForgotPassword';
+import ChangePassword from './components/ChangePassword';
 
 function App() {
 
   const router = createBrowserRouter([
+
+    {
+      path:'/',
+      element: <Navbar/>
+    },
    
     {
       path:'/change-password/:token',
-      element: <ChangePassword></ChangePassword>
+      element: <ChangePassword/>
     },
+
+    {
+      path: "/signup",
+      element: <Register/>
+    },
+
+    {
+      path: "/signin",
+      element: <Login/>
+    },
+
+    {
+      path: "/forgot-password",
+      element: <ForgotPassword/>
+    }
 
    
 
@@ -22,6 +47,7 @@ function App() {
     <div className="App">
       
      <RouterProvider router={router} />
+     <Toaster/>
     </div>
     </>
   );
