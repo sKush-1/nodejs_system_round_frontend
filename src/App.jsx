@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import Login from './pages/Login';
 import ForgotPassword from './components/ForgotPassword';
 import ChangePassword from './components/ChangePassword';
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -15,6 +16,11 @@ function App() {
     {
       path:'/',
       element: <Navbar/>
+    },
+
+    {
+      path: "users/profile",
+      element: <Profile/>
     },
    
     {
